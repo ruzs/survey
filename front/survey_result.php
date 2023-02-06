@@ -1,8 +1,6 @@
 <?php
-$subject=find("survey_subject",$_GET['id']);
-$options=all("survey_options",['subject_id'=>$_GET['id']]);
-/* dd($subject);
-dd($options); */
+$subject=$Subject->find($_GET['id']);
+$options=$Option->all(['subject_id'=>$_GET['id']]);
 ?>
 <h3 class="text-center font-weight-bold">調查結果</h3>
 
