@@ -1,7 +1,6 @@
 <?php
 include_once "base.php";
 if (isset($_POST['option'])) {
-  dd($_POST['option']);
   $option_id=$_POST['option'];
   $option= $Option->find($option_id);
   $subject= $Subject->find($option['subject_id']);
@@ -9,21 +8,15 @@ if (isset($_POST['option'])) {
   $option['vote']++;
   $id=$subject['id'];
   $Subject->save($subject);
-  dd($option);
-  dd($subject);
   echo "<hr>";
   $Option->save($option);
   echo "<hr>";
-  $sql="ALTER TABLE `survey_users` ADD `sub_id_.$id. ` INT(10) NOT NULL DEFAULT '0' AFTER `sh`;";
+  $sql="ALTER TABLE `survey_users` ADD `sub_id_$id` INT(10) NOT NULL DEFAULT '0' AFTER `sh`;";
   echo $sql;
   $dsn="mysql:host=localhost;charset=utf8;dbname=survey";
-  $pdo=new PDO($dsn,'root','',[]);
-  $pdo->query($sql);
-  // $pdo->exec($sql);
-  
-  // $subject= $Subject->find($option['subject_id']);
-  // dd($subject);
-  // echo "<hr>";
+  $pdo=new PDO($dsn,'root','');
+  $res=$pdo->exec($sql);
+
   
   $user= $User->find(['acc' => $_SESSION['login']]);
   echo "<hr>";
