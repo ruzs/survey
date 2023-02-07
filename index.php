@@ -21,7 +21,7 @@
     include "./front/main.php";
   }
   ?>
-  <?php include "./layouts/scripts.php";?>
+  <?php include "./layouts/scripts.php"; ?>
 </body>
 
 </html>

@@ -119,5 +119,6 @@ function q($sql){
 $User=new DB("survey_users");
 $Subject=new DB("survey_subject");
 $Option=new DB("survey_options");
+$Log=new DB("survey_log");
 
 ?>

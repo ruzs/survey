@@ -3,7 +3,7 @@ if (isset($_GET['id'])) {
   $subject = $Subject->find($_GET['id']);
   $options = $Option->all(['subject_id' => $_GET['id']]);
 } else {
-  header("location:../back.php?do=survey&error=沒有指定編輯的調查id");
+  to("../back.php?do=survey&error=沒有指定編輯的調查id");
 }
 ?>
 <div class="bg-secondary" style="height:1000px;">

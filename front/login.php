@@ -18,7 +18,7 @@
   <a href="?do=reg_user" class="mx-3">尚未註冊</a>
 </div>
 <script>
-    function login() {
+  function login() {
     let user = {
       acc: $("#acc").val(),
       pw: $("#pw").val()
@@ -31,7 +31,7 @@
           console.log(result);
           if (parseInt(result) === 1) {
             // 帳密正確
-              location.href = 'index.php?do=main';
+            location.href = 'index.php?do=main';
           } else {
             // 密碼錯誤
             alert("密碼錯誤");
@@ -46,6 +46,7 @@
     })
     console.log(user);
   }
+
   function reset() {
     $("#acc,#pw,#pw2,#email,#name,#token").val('')
   }

@@ -10,15 +10,15 @@
         <div class="card mx-auto mb-5 h-75" style="width: 18rem;">
           <div class="content p-3">
             <h3 style="color: #fff;"><?= $survey['subject']; ?></h3>
-            <div>
+            <div class="mt-5">
               <?php
               if (isset($_SESSION['login'])) {
-                echo "<a class='m-sm-2' href='index.php?do=survey_item&id=".$survey['id']."'><button type='button' class='btn btn-primary my-2 mx-auto' style='display:block;'>投票</button></a>";
+                echo "<a class='m-2 d-inline-block' href='index.php?do=survey_item&id=".$survey['id']."'><button type='button' class='btn btn-primary' style='display:block;'>投票</button></a>";
               }
               ?>
-              <a class='m-sm-2' href='?do=survey_result&id=<?=$survey['id']?>'><button type='button' class='btn btn-primary my-2 mx-auto btn-lg' style="display:block;">結果</button></a>
+              <a class='m-3 d-inline-block' href='?do=survey_result&id=<?=$survey['id']?>'><button type='button' class='btn btn-warning btn-lg text-white' style="display:block;">結果</button></a>
             </div>
-            <p style="color: #fff;">參與數 <?= $survey["vote"] ?></p>
+            <p  class="mt-5 text-white">參與數 <?= $survey["vote"] ?></p>
           </div>
         </div>
       </div>

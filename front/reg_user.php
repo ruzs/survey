@@ -34,7 +34,7 @@
   <label class="mx-3" for=""><button type='reset' class='btn btn-primary  btn-lg' value="重置" onclick="reset()">重置</button></label>
 </div>
 <script>
-    function reg() {
+  function reg() {
     let user = {
       acc: $("#acc").val(),
       pw: $("#pw").val(),
@@ -55,7 +55,7 @@
             alert("帳號重覆");
           } else {
             //不重覆
-            $.post("./api/reg_user.php",user,(result)=>{
+            $.post("./api/reg_user.php", user, (result) => {
               alert("註冊完成，歡迎加入");
               reset();
               location.href = 'index.php?do=main';
@@ -68,6 +68,7 @@
       }
     }
   }
+
   function reset() {
     $("#acc,#pw,#pw2,#email,#name,#token").val('')
   }

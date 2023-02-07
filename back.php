@@ -21,7 +21,6 @@
     include "./back/survey.php";
   }
   ?>
-
   <?php include "./layouts/scripts.php"; ?>
 </body>
 

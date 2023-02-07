@@ -14,7 +14,7 @@
           console.log(result);
           if (parseInt(result) === 1) {
             // 帳密正確
-              location.href = 'index.php?do=main';
+            location.href = 'index.php?do=main';
           } else {
             // 密碼錯誤
             alert("密碼錯誤");
@@ -55,7 +55,7 @@
             alert("帳號重覆");
           } else {
             //不重覆
-            $.post("./api/reg_user.php",user,(result)=>{
+            $.post("./api/reg_user.php", user, (result) => {
               alert("註冊完成，歡迎加入");
               reset();
               location.href = 'index.php?do=main';
@@ -71,10 +71,13 @@
 
   function forgot() {
     $("#email").val();
-    $.get('./api/forgot.php',{email:$("#email").val()},(result)=>{
+    $.get('./api/forgot.php', {
+      email: $("#email").val()
+    }, (result) => {
       $("#result").html(result);
     })
   }
+
   function addOption() {
     let options = document.getElementById('options');
     let num = document.getElementsByClassName('option').length + 1
@@ -96,7 +99,7 @@
   }
 
   function addOptionn() {
-    let options = document.getElementById('options<?=$x?>');
+    let options = document.getElementById('options<?= $x ?>');
     let num = document.getElementsByClassName('option').length + 1
     let opt = document.createElement("div");
     let span = document.createElement("span");

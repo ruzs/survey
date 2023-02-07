@@ -1,4 +1,3 @@
-
 <div class="bg-secondary" style="height:1000px;">
   <h3 class="text-center text-light " style="margin-top:100px; padding-top:100px">
     新增投票
@@ -42,4 +41,5 @@
     opt.appendChild(span);
     opt.appendChild(input);
     options.appendChild(opt);
-  }</script>
+  }
+</script>

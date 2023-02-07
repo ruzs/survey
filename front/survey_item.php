@@ -2,14 +2,14 @@
 if (isset($_GET['id'])) {
   $survey = $Subject->find($_GET['id']);
   $options = $Option->all(['subject_id' => $_GET['id']]);
-  $user= $User->find(['acc' => $_SESSION['login']]);
-  
+  $user = $User->find(['acc' => $_SESSION['login']]);
+  $log = $Log->find(['user_id' => $user['id'], 'subject_id' => $_GET['id']]);
 } else {
   $error = "請回到問卷首頁選擇正確的題目來進行";
 }
 ?>
 <h3 class="text-center font-weight-bold" style="margin-top:100px; padding-top:50px"><?= $survey['subject']; ?></h3>
-<form action="./api/survey_vote.php" method="post">
+<form action="./api/survey_log.php" method="post">
   <div class="col-8 mx-auto mt-4">
     <?php
     if (isset($error)) {
@@ -20,13 +20,15 @@ if (isset($_GET['id'])) {
         <!--列表項目-->
         <div class="input-group my-sm-2 justify-content-center">
           <div class="input-group-text">
-            <input class="form-check-input mt-0" type="radio" name ="option" value="<?=$option['id'];?>" aria-label="Radio button for following text input" 
-            <?php
-            if(isset($user['sub_id_'.$_GET['id']])){
-              if($user['sub_id_'.$_GET['id']]==$option['id']){echo"checked";}else{echo"b";};
-            }
-            ?>>
-            <input type="hidden" name="all_opt<?=$option['id'];?>" value="<?=$option['id'];?>">
+            <input class="form-check-input mt-0" type="radio" name="option" value="<?= $option['id']; ?>" aria-label="Radio button for following text input" 
+              <?php
+              if (isset($log['option_id'])) {
+                if ($log['option_id'] == $option['id']) {
+                  echo "checked";
+                };
+              };
+              ?>
+            >
           </div>
           <span class="form-control-lg" style="border: solid 1px #ced4da;" aria-label="Text input with radio button"><?= $option['opt']; ?></span>
         </div>
