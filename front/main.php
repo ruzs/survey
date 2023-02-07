@@ -16,7 +16,7 @@
                 echo "<a class='m-sm-2' href='index.php?do=survey_item&id=".$survey['id']."'><button type='button' class='btn btn-primary my-2 mx-auto' style='display:block;'>投票</button></a>";
               }
               ?>
-              <a class='m-sm-2' href='?do=login'><button type='button' class='btn btn-primary my-2 mx-auto btn-lg' style="display:block;">結果</button></a>
+              <a class='m-sm-2' href='?do=survey_result'><button type='button' class='btn btn-primary my-2 mx-auto btn-lg' style="display:block;">結果</button></a>
             </div>
             <p style="color: #fff;">參與數 <?= $survey["vote"] ?></p>
           </div>

@@ -23,4 +23,4 @@ if (isset($_POST['optn'])) {
     }
   }
 }
-header("location:../back.php?do=survey");
+to("../back.php?do=survey");

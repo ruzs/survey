@@ -17,5 +17,5 @@ if(isset($_POST['opt'])){
       }
   }
 }
-header("location:../back.php?do=survey");
+to("../back.php?do=survey");
 ?>
