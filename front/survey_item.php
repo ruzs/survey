@@ -20,13 +20,13 @@ if (isset($_GET['id'])) {
         <!--列表項目-->
         <div class="input-group my-sm-2 justify-content-center">
           <div class="input-group-text">
-            <input class="form-check-input mt-0" type="radio" name ="option" value="<?=$option['id'];?>" aria-label="Radio button for following text input" <?php
+            <input class="form-check-input mt-0" type="radio" name ="option" value="<?=$option['id'];?>" aria-label="Radio button for following text input" 
+            <?php
             if(isset($user['sub_id_'.$_GET['id']])){
               if($user['sub_id_'.$_GET['id']]==$option['id']){echo"checked";}else{echo"b";};
-            }else{
-              echo "no";
             }
-            ?> >
+            ?>>
+            <input type="hidden" name="all_opt<?=$option['id'];?>" value="<?=$option['id'];?>">
           </div>
           <span class="form-control-lg" style="border: solid 1px #ced4da;" aria-label="Text input with radio button"><?= $option['opt']; ?></span>
         </div>
@@ -35,7 +35,6 @@ if (isset($_GET['id'])) {
     }
     ?>
   </div>
-  
   <input type="hidden" name="sur_id" value="<?= $survey['id']; ?>">
   <?php
   if (isset($_GET['error'])) {
