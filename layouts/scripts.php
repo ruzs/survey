@@ -35,16 +35,13 @@
   }
 
   function reg() {
-    if($("#token").val()=="friend"){
-      var level=2;
-    }
     let user = {
       acc: $("#acc").val(),
       pw: $("#pw").val(),
       pw2: $("#pw2").val(),
       name: $("#name").val(),
       email: $("#email").val(),
-      level: level,
+      level: $("#token").val(),
       sh: 0
     }
     if (user.acc === '' || user.pw === '' || user.pw2 === '' || user.email === '') {
