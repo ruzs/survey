@@ -33,4 +33,7 @@
   a {
     text-decoration: none;
   }
+  input::placeholder {
+    color: #aaa;
+  }
 </style>

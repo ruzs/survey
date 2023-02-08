@@ -6,13 +6,13 @@ if (isset($_GET['id'])) {
   to("../back.php?do=survey&error=沒有指定編輯的調查id");
 }
 ?>
-<div class="bg-secondary" style="height:1000px;">
-  <h3 class="text-center text-light " style="margin-top:100px; padding-top:100px">
+<div class="bg-secondary" style="height:1100px;">
+  <h1 class="text-center text-light fw-bold" style="margin-top:100px; padding-top:100px">
     編輯投票
     <button onclick='addOptionn()' class="btn btn-success btn-sm py-0" style="font-size:1.5rem">
       +
     </button>
-  </h3>
+  </h1>
   <form action="./api/survey_edit.php" method="post" class="col-10 mx-auto d-flex flex-wrap justify-content-center">
     <div class="input-group my-3 justify-content-center">
       <span class="input-group-text" id="basic-addon2">主題</span>

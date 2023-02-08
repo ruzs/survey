@@ -1,7 +1,7 @@
 <?php
 $bgc = (isset($_SESSION['login'])) ? "bg-dark" : "bg-white";
 ?>
-<header class="container-fluid shadow mb-5 <?= $bgc ?> position-fixed top-0" style="z-index:10;">
+<header class="container-fluid shadow <?= $bgc ?> position-fixed top-0" style="z-index:10;">
   <nav class="d-flex justify-content-between py-3">
     <div class='img-block overflow-hidden'>
       <a class='mx-sm-2' href='index.php'>
@@ -16,6 +16,7 @@ $bgc = (isset($_SESSION['login'])) ? "bg-dark" : "bg-white";
     <div>
       <a class='m-sm-2' href='back.php'><button type='button' class='btn btn-primary my-3 mx-auto'>投票管理</button></a>
       <a class='m-sm-2' href='back.php?do=survey_add'><button type='button' class='btn btn-success my-3 mx-auto'>新增投票</button></a>
+      <a class='m-sm-2' href='back.php?do=upload'><button type='button' class='btn btn-warning my-3 mx-auto'>檔案上傳</button></a>
     </div>
     <?php
       }

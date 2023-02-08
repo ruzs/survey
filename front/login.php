@@ -1,4 +1,4 @@
-<h1 class="text-center" style="margin-top:200px;">使用者登入</h1>
+<h1 class="text-center fw-bold" style="margin-top:100px;padding-top:100px;"">使用者登入</h1>
 <div class="input-group my-3 justify-content-center">
   <span class="input-group-text" id="basic-addon1">帳號</span>
   <input type="text" class="form-control-lg" style="border: solid 1px #ced4da;" placeholder="Account" aria-label="Username" aria-describedby="basic-addon1" name="acc" id="acc">

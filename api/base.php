@@ -120,5 +120,5 @@ $User=new DB("survey_users");
 $Subject=new DB("survey_subject");
 $Option=new DB("survey_options");
 $Log=new DB("survey_log");
-
+$Upl=new DB("survey_upload");
 ?>
