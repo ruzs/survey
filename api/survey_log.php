@@ -6,11 +6,13 @@ if (isset($_POST['option'])) {
   $subject_id = $_POST['sur_id'];
   $subject = $Subject->find($subject_id);
   $user = $User->find(['acc' => $_SESSION['login']]);
-  $log = $Log->find(['subject_id' => $subject['id']]);
+  $log = $Log->find(['user_id'=>$user['id'],'subject_id' => $subject['id']]);
   $option_del = $Option->find(['id' => $log['option_id']]);
+  dd($option_del);
   $Log->del(['user_id' => $user['id'], 'subject_id' => $subject_id]);
-
+  dd($log);
   $option_del['vote'] = $Log->count(['option_id' => $log['option_id']]);
+  dd($option_del);
   $Option->save($option_del);
 
   $log = [
@@ -18,7 +20,6 @@ if (isset($_POST['option'])) {
     'subject_id' => $_POST['sur_id'],
     'option_id' => $_POST['option']
   ];
-  dd($log);
   $Log->save($log);
 
   $subv = $Log->count(['subject_id' => $_POST['sur_id']]);
