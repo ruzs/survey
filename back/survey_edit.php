@@ -21,11 +21,9 @@ if (isset($_GET['id'])) {
     </div>
     <!--選項區-->
     <?php
-    $x = 0;
     foreach ($options as $idx => $option) {
-      $x = $x + 1;
     ?>
-      <div id="options<?= $x ?>" class="option input-group my-3 justify-content-center">
+      <div id="options<?= $idx ?>" class="option input-group my-3 justify-content-center">
         <span class="input-group-text" id="basic-addon2">項目<?= $idx + 1 ?></span>
         <input type="text" class="form-control-lg col-8" style="border: solid 1px #ced4da;" placeholder="選項" aria-label="Username" aria-describedby="basic-addon2" name="opt[]" value="<?= $option['opt'] ?>">
         <input type="hidden" name="opt_id[]" value="<?= $option['id']; ?>">
@@ -43,7 +41,7 @@ if (isset($_GET['id'])) {
 </div>
 <script>
   function addOptionn() {
-    let options = document.getElementById('options<?= $x ?>');
+    let options = document.getElementById('options<?= $idx ?>');
     let num = document.getElementsByClassName('option').length + 1
     let opt = document.createElement("div");
     let span = document.createElement("span");
