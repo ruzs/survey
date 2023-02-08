@@ -35,12 +35,17 @@
   }
 
   function reg() {
+    if($("#token").val()=="friend"){
+      var level=2;
+    }
     let user = {
       acc: $("#acc").val(),
       pw: $("#pw").val(),
       pw2: $("#pw2").val(),
       name: $("#name").val(),
       email: $("#email").val(),
+      level: level,
+      sh: 0
     }
     if (user.acc === '' || user.pw === '' || user.pw2 === '' || user.email === '') {
       //有空白
@@ -57,6 +62,7 @@
             //不重覆
             $.post("./api/reg_user.php", user, (result) => {
               alert("註冊完成，歡迎加入");
+              console.log(user);
               reset();
               location.href = 'index.php?do=main';
             })

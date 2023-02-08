@@ -41,24 +41,3 @@ if (isset($_GET['id'])) {
     </div>
   </form>
 </div>
-<script>
-  function addOptionn() {
-    let options = document.getElementById('options');
-    let num = document.getElementsByClassName('option').length + 1
-    let opt = document.createElement("div");
-    let span = document.createElement("span");
-    let input = document.createElement('input');
-    let numNode = document.createTextNode("選項" + num);
-    opt.setAttribute("class", "option input-group my-3 justify-content-center")
-    span.setAttribute("class", "input-group-text");
-    input.setAttribute("class", "form-control-lg col-8")
-    input.setAttribute("name", "optn[]")
-    input.setAttribute("style", "border: solid 1px #ced4da;")
-    input.setAttribute("placeholder", "選項")
-    input.setAttribute("type", "text")
-    span.appendChild(numNode)
-    opt.appendChild(span);
-    opt.appendChild(input);
-    options.appendChild(opt);
-  }
-</script>

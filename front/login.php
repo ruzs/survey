@@ -17,37 +17,3 @@
   <a href="?do=forgot" class="mx-3">忘記密碼</a>
   <a href="?do=reg_user" class="mx-3">尚未註冊</a>
 </div>
-<script>
-  function login() {
-    let user = {
-      acc: $("#acc").val(),
-      pw: $("#pw").val()
-    }
-    $.post("./api/chk_acc.php", user, (result) => {
-      console.log(result);
-      if (parseInt(result) === 1) {
-        //有此帳號
-        $.post("./api/chk_pw.php", user, (result) => {
-          console.log(result);
-          if (parseInt(result) === 1) {
-            // 帳密正確
-            location.href = 'index.php?do=main';
-          } else {
-            // 密碼錯誤
-            alert("密碼錯誤");
-            reset()
-          }
-        })
-      } else {
-        //無此帳號
-        alert("查無此帳號");
-        reset()
-      }
-    })
-    console.log(user);
-  }
-
-  function reset() {
-    $("#acc,#pw,#pw2,#email,#name,#token").val('')
-  }
-</script>
