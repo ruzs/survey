@@ -13,17 +13,18 @@ if (isset($_GET['id'])) {
       +
     </button>
   </h3>
-  <form action="./api/survey_edit.php" method="post" class="col-10 mx-auto d-flex flex-wrap justify-content-end">
+  <form action="./api/survey_edit.php" method="post" class="col-10 mx-auto d-flex flex-wrap justify-content-center">
     <div class="input-group my-3 justify-content-center">
       <span class="input-group-text" id="basic-addon2">主題</span>
       <input type="text" class="form-control-lg col-10" style="border: solid 1px #ced4da;" placeholder="主題" aria-label="Username" aria-describedby="basic-addon2" name="subject" id="subject" value="<?= $subject['subject']; ?>">
       <input type="hidden" name="subject_id" value="<?= $subject['id'] ?>">
     </div>
     <!--選項區-->
+    <div id="options" class="col-6">
     <?php
     foreach ($options as $idx => $option) {
     ?>
-      <div id="options<?= $idx ?>" class="option input-group my-3 justify-content-center">
+      <div class="option input-group my-3 justify-content-center">
         <span class="input-group-text" id="basic-addon2">項目<?= $idx + 1 ?></span>
         <input type="text" class="form-control-lg col-8" style="border: solid 1px #ced4da;" placeholder="選項" aria-label="Username" aria-describedby="basic-addon2" name="opt[]" value="<?= $option['opt'] ?>">
         <input type="hidden" name="opt_id[]" value="<?= $option['id']; ?>">
@@ -32,6 +33,7 @@ if (isset($_GET['id'])) {
     <?php
     }
     ?>
+    </div>
     <div class="text-center col-12 mt-3">
       <input class="btn btn-primary mx-1" type="submit" value="修改">
       <input class="btn btn-warning mx-1" type="reset" value="重置">
@@ -41,7 +43,7 @@ if (isset($_GET['id'])) {
 </div>
 <script>
   function addOptionn() {
-    let options = document.getElementById('options<?= $idx ?>');
+    let options = document.getElementById('options');
     let num = document.getElementsByClassName('option').length + 1
     let opt = document.createElement("div");
     let span = document.createElement("span");

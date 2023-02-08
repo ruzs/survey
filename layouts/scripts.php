@@ -99,7 +99,7 @@
   }
 
   function addOptionn() {
-    let options = document.getElementById('options<?= $x ?>');
+    let options = document.getElementById('options');
     let num = document.getElementsByClassName('option').length + 1
     let opt = document.createElement("div");
     let span = document.createElement("span");
