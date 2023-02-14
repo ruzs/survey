@@ -11,7 +11,7 @@ $bgc = (isset($_SESSION['login'])) ? "bg-dark" : "bg-white";
     <?php
     if (isset($_SESSION['login'])) {
       $user = $User->find(['acc' => $_SESSION['login']]);
-      if ($user["level"] == 2) {
+      if ($user["level"] >= 2) {
     ?>
     <div>
       <a class='m-sm-2' href='back.php'><button type='button' class='btn btn-primary my-3 mx-auto'>投票管理</button></a>
